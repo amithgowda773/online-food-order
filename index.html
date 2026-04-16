@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zafrani — Authentic Indian Cuisine</title>
+  <meta name="description" content="Order authentic Indian food online. Fresh, flavourful, delivered fast." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header>
+  <nav>
+    <a class="logo" href="#" onclick="showPage('home'); return false;">
+      <div class="logo-icon">🍛</div>
+      Zafrani
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#" class="active" onclick="showPage('home'); return false;">Home</a></li>
+      <li><a href="#" onclick="showPage('menu'); return false;">Menu</a></li>
+      <li><a href="#" onclick="showPage('about'); return false;">About</a></li>
+      <li><a href="#" onclick="showPage('contact'); return false;">Contact</a></li>
+    </ul>
+    <a href="#" class="nav-order-btn" onclick="showPage('menu'); return false;">🛒 Order Now</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<!-- ===================== PAGE: HOME ===================== -->
+<main id="page-home" class="page active">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-tag">🌟 Bangalore's Favourite Since 2010</div>
+        <h1>Authentic Flavours,<br><em>Delivered Fresh</em></h1>
+        <p>From our tandoor to your table — experience the rich heritage of Indian cuisine crafted with love, spice, and the finest ingredients.</p>
+        <div class="hero-btns">
+          <a href="#" class="btn btn-primary" onclick="showPage('menu'); return false;">🍽 Explore Menu</a>
+          <a href="#" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,0.5)" onclick="showPage('about'); return false;">Our Story</a>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <div class="stat-num">50+</div>
+            <div class="stat-lbl">Menu Items</div>
+          </div>
+          <div>
+            <div class="stat-num">4.8★</div>
+            <div class="stat-lbl">Customer Rating</div>
+          </div>
+          <div>
+            <div class="stat-num">30 min</div>
+            <div class="stat-lbl">Avg Delivery</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Strip -->
+  <section class="features-strip">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🚀</div>
+          <h3>Express Delivery</h3>
+          <p>Hot food at your door in under 30 minutes across Bangalore.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">👨‍🍳</div>
+          <h3>Master Chefs</h3>
+          <p>Our chefs bring decades of traditional culinary expertise.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🌿</div>
+          <h3>Fresh Ingredients</h3>
+          <p>Farm-sourced produce, no preservatives, prepared daily.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💳</div>
+          <h3>Easy Payments</h3>
+          <p>UPI, cards, wallets — pay however you like.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Home Menu Preview -->
+  <section class="home-menu">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Today's <span class="accent">Specials</span></h2>
+          <p class="section-subtitle">A curated selection from our menu, loaded straight from our kitchen file.</p>
+        </div>
+        <a href="#" class="btn btn-outline" onclick="showPage('menu'); return false;">View Full Menu →</a>
+      </div>
+      <div class="menu-grid" id="homeMenuGrid">
+        <div class="loading-skeleton"><div class="spinner"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section style="background:linear-gradient(135deg,#E8620A,#C44E05);padding:72px 0;text-align:center;">
+    <div class="container">
+      <h2 style="font-family:var(--font-serif);font-size:clamp(1.8rem,4vw,2.6rem);color:#fff;margin-bottom:12px;">
+        Ready to satisfy your cravings?
+      </h2>
+      <p style="color:rgba(255,255,255,0.85);margin-bottom:32px;font-size:1.05rem;">
+        Order now and get your first delivery free on orders above ₹499.
+      </p>
+      <a href="#" class="btn" style="background:#fff;color:var(--saffron);font-weight:700;padding:16px 36px;border-radius:50px;box-shadow:0 4px 20px rgba(0,0,0,0.2);" onclick="showPage('menu'); return false;">
+        🍛 Order Now
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== PAGE: MENU ===================== -->
+<main id="page-menu" class="page">
+
+  <div class="menu-page-hero">
+    <div class="container">
+      <h1>Our <span style="color:var(--saffron-lt)">Menu</span></h1>
+      <p>Every dish crafted with tradition and passion. Prices in Indian Rupees.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="menu-filters" id="menuFilters">
+      <button class="filter-btn active" data-filter="all">🍽 All Items</button>
+      <!-- Category buttons injected by JS -->
+    </div>
+    <div class="full-menu-wrap" id="fullMenuWrap">
+      <div class="loading-skeleton"><div class="spinner"></div></div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ===================== PAGE: ABOUT ===================== -->
+<main id="page-about" class="page">
+
+  <div class="about-hero">
+    <div class="container">
+      <h1>Our <span style="color:var(--saffron-lt)">Story</span></h1>
+      <p>A family legacy of flavour, spice, and hospitality since 2010.</p>
+    </div>
+  </div>
+
+  <section class="about-story">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img-wrap">
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&h=700&fit=crop" alt="Zafrani Restaurant" class="about-img" />
+          <div class="about-img-badge">
+            <span class="num">14+</span>
+            <span class="lbl">Years of Excellence</span>
+          </div>
+        </div>
+        <div class="about-text">
+          <h2 class="section-title">From a Family Kitchen to <span class="accent">Bangalore's Favourite</span></h2>
+          <p>Zafrani began in 2010 as a humble dhaba run by the Sharma family in Yelahanka, Bangalore. Driven by a passion for authentic recipes passed down through generations, we turned a modest dream into one of the city's most loved culinary destinations.</p>
+          <p>The name <em>Zafrani</em> — derived from the Urdu word for saffron — represents the golden spice that defines our cooking philosophy: precious, aromatic, and transformative. Every dish we serve carries the warmth of home and the richness of India's diverse culinary heritage.</p>
+          <p>Today, we serve over 500 happy customers daily, operating both our dine-in restaurant and online delivery platform — bringing the same warmth and quality to your doorstep.</p>
+          <div class="about-values">
+            <div class="value-item">
+              <h4>🌿 Fresh Always</h4>
+              <p>Ingredients sourced daily from local farms.</p>
+            </div>
+            <div class="value-item">
+              <h4>🔥 Authentic Recipes</h4>
+              <p>Traditional methods, never cut corners.</p>
+            </div>
+            <div class="value-item">
+              <h4>💚 Hygiene First</h4>
+              <p>FSSAI certified, Grade A kitchen standards.</p>
+            </div>
+            <div class="value-item">
+              <h4>🚀 Fast Delivery</h4>
+              <p>Guaranteed delivery under 30 minutes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="team-section">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:40px;">
+        <h2 class="section-title">Meet the <span class="accent">Team</span></h2>
+        <p class="section-subtitle">The passionate people behind every bite.</p>
+      </div>
+      <div class="team-grid">
+        <div class="team-card">
+          <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=200&h=200&fit=crop&face" alt="Chef Ramesh Sharma" class="team-avatar" />
+          <h3>Chef Ramesh Sharma</h3>
+          <div class="role">Head Chef & Founder</div>
+        </div>
+        <div class="team-card">
+          <img src="https://images.unsplash.com/photo-1606787620819-8bdd83f3add0?w=200&h=200&fit=crop" alt="Priya Sharma" class="team-avatar" />
+          <h3>Priya Sharma</h3>
+          <div class="role">Operations Director</div>
+        </div>
+        <div class="team-card">
+          <img src="https://images.unsplash.com/photo-1583394293214-0d9572b7d452?w=200&h=200&fit=crop" alt="Chef Arjun Nair" class="team-avatar" />
+          <h3>Chef Arjun Nair</h3>
+          <div class="role">Sous Chef</div>
+        </div>
+        <div class="team-card">
+          <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=200&h=200&fit=crop" alt="Meena Krishnan" class="team-avatar" />
+          <h3>Meena Krishnan</h3>
+          <div class="role">Pastry & Desserts</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Info -->
+  <section class="contact-info-section">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:40px;">
+        <h2 class="section-title">Find <span class="accent">Us</span></h2>
+        <p class="section-subtitle">We'd love to see you in person or hear from you.</p>
+      </div>
+      <div class="contact-info-grid">
+        <div class="info-card">
+          <div class="info-icon">📍</div>
+          <h3>Address</h3>
+          <p>42, Sahakara Nagar Main Road,<br>Yelahanka, Bengaluru — 560064</p>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">📞</div>
+          <h3>Phone</h3>
+          <p>+91 80 4567 8901<br>+91 98765 43210 (WhatsApp)</p>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">📧</div>
+          <h3>Email</h3>
+          <p>orders@zafrani.in<br>support@zafrani.in</p>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">🕐</div>
+          <h3>Hours</h3>
+          <p>Mon–Fri: 11:00 AM – 11:00 PM<br>Sat–Sun: 10:00 AM – 11:30 PM</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== PAGE: CONTACT ===================== -->
+<main id="page-contact" class="page">
+
+  <div class="contact-page-hero">
+    <div class="container">
+      <h1>Get in <span style="color:rgba(255,255,255,0.9)">Touch</span></h1>
+      <p>Questions, feedback, or a special order? We're here for you.</p>
+    </div>
+  </div>
+
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- Contact Details -->
+        <div class="contact-details">
+          <h2 class="section-title">Let's <span class="accent">Talk</span></h2>
+          <p>Whether you're planning a bulk order, have a dietary query, or just want to say hello — reach out through any channel below.</p>
+
+          <div class="contact-detail-item">
+            <div class="detail-icon">📍</div>
+            <div class="detail-text">
+              <h4>Our Restaurant</h4>
+              <p>42, Sahakara Nagar Main Road, Yelahanka, Bengaluru — 560064</p>
+            </div>
+          </div>
+          <div class="contact-detail-item">
+            <div class="detail-icon">📞</div>
+            <div class="detail-text">
+              <h4>Call Us</h4>
+              <p>+91 80 4567 8901 (Landline)<br>+91 98765 43210 (WhatsApp)</p>
+            </div>
+          </div>
+          <div class="contact-detail-item">
+            <div class="detail-icon">📧</div>
+            <div class="detail-text">
+              <h4>Email Us</h4>
+              <p>orders@zafrani.in<br>support@zafrani.in</p>
+            </div>
+          </div>
+          <div class="contact-detail-item">
+            <div class="detail-icon">🕐</div>
+            <div class="detail-text">
+              <h4>Working Hours</h4>
+              <p>Mon–Fri: 11 AM – 11 PM<br>Weekends: 10 AM – 11:30 PM</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-card">
+          <h2>Send a Message</h2>
+          <p>Fill out the form below and we'll get back to you within 2 hours.</p>
+
+          <div id="formSuccess" class="form-success">
+            <div class="success-icon">✅</div>
+            <h3>Message Sent!</h3>
+            <p>Thank you for reaching out. Our team will get back to you within 2 hours.</p>
+          </div>
+
+          <div id="contactFormWrap">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fullName">Full Name *</label>
+                <input type="text" id="fullName" placeholder="Rahul Sharma" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" placeholder="rahul@example.com" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="+91 98765 43210" />
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject *</label>
+                <select id="subject">
+                  <option value="">Select a subject</option>
+                  <option>New Order / Enquiry</option>
+                  <option>Bulk / Catering Order</option>
+                  <option>Feedback / Complaint</option>
+                  <option>Delivery Issue</option>
+                  <option>Dietary Query</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="message">Your Message *</label>
+              <textarea id="message" placeholder="Tell us how we can help you..."></textarea>
+            </div>
+            <button class="form-submit" onclick="submitForm()">
+              📨 Send Message
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo" style="color:#fff;margin-bottom:14px;">
+          <div class="logo-icon">🍛</div> Zafrani
+        </div>
+        <p>Bringing authentic Indian flavours to your doorstep. Crafted with passion, delivered with love from our kitchen in Bangalore.</p>
+        <div class="footer-social">
+          <a class="social-link" href="#" title="Instagram">📸</a>
+          <a class="social-link" href="#" title="Facebook">📘</a>
+          <a class="social-link" href="#" title="Twitter">🐦</a>
+          <a class="social-link" href="#" title="WhatsApp">💬</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#" onclick="showPage('home'); return false;">Home</a></li>
+          <li><a href="#" onclick="showPage('menu'); return false;">Menu</a></li>
+          <li><a href="#" onclick="showPage('about'); return false;">About Us</a></li>
+          <li><a href="#" onclick="showPage('contact'); return false;">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="#" onclick="showPage('menu'); return false;">Starters</a></li>
+          <li><a href="#" onclick="showPage('menu'); return false;">Main Course</a></li>
+          <li><a href="#" onclick="showPage('menu'); return false;">Biryani</a></li>
+          <li><a href="#" onclick="showPage('menu'); return false;">Desserts</a></li>
+          <li><a href="#" onclick="showPage('menu'); return false;">Beverages</a></li>
+        </ul>
+      </div>
+      <div class="footer-newsletter footer-col">
+        <h4>Stay Updated</h4>
+        <p>Subscribe for new dishes, offers, and exclusive deals delivered to your inbox.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="your@email.com" id="newsletterEmail" />
+          <button onclick="subscribeNewsletter()">Go</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Zafrani Restaurant, Yelahanka, Bengaluru. All rights reserved. | FSSAI Lic: 11224999000123</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Cart Toast -->
+<div class="cart-toast" id="cartToast">
+  <span class="toast-icon">✅</span>
+  <span id="toastMsg">Added to cart!</span>
+</div>
+
+<!-- ===================== JAVASCRIPT ===================== -->
+<script>
+/* ====================================================
+   ZAFRANI — Main JavaScript
+   Handles: XML parsing, rendering, navigation, UI
+   ==================================================== */
+
+// ---- XML DATA (embedded for file:// compatibility) ----
+const XML_DATA = `<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+  <category name="Starters">
+    <item id="1"><n>Paneer Tikka</n><price>249</price><description>Tender cottage cheese cubes marinated in spiced yogurt, grilled to perfection in a tandoor. Served with mint chutney.</description><image>https://images.unsplash.com/photo-1567188040759-fb8a883dc6d6?w=400&amp;h=300&amp;fit=crop</image><badge>Veg</badge></item>
+    <item id="2"><n>Chicken Seekh Kebab</n><price>299</price><description>Minced chicken blended with aromatic herbs and spices, skewered and grilled over charcoal. Juicy and flavour-packed.</description><image>https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=400&amp;h=300&amp;fit=crop</image><badge>Non-Veg</badge></item>
+    <item id="3"><n>Veg Spring Rolls</n><price>189</price><description>Crispy golden rolls stuffed with fresh vegetables and glass noodles, served with sweet chilli dipping sauce.</description><image>https://images.unsplash.com/photo-1563245372-f21724e3856d?w=400&amp;h=300&amp;fit=crop</image><badge>Veg</badge></item>
+    <item id="4"><n>Hara Bhara Kebab</n><price>219</price><description>Soft patties made from spinach, peas, and paneer, shallow-fried until golden. A healthy and delicious starter.</description><image>https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=400&amp;h=300&amp;fit=crop</image><badge>Veg</badge></item>
+  </category>
+  <category name="Main Course">
+    <item id="5"><n>Butter Chicken</n><price>389</price><description>Succulent chicken pieces simmered in a rich, creamy tomato-butter gravy with aromatic spices. Best paired with naan.</description><image>https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=400&amp;h=300&amp;fit=crop</image><badge>Non-Veg</badge></item>
+    <item id="6"><n>Paneer Butter Masala</n><price>349</price><description>Soft paneer cubes in a velvety tomato-cashew gravy, infused with aromatic spices and finished with fresh cream.</description><image>https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=400&amp;h=300&amp;fit=crop</image><badge>Veg</badge></item>
+    <item id="7"><n>Dal Makhani</n><price>299</price><description>Black lentils slow-cooked overnight with butter and cream, the classic Punjabi comfort dish. Rich and indulgent.</description><image>https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=400&amp;h=300&amp;fit=crop</image><badge>Veg</badge></item>
+    <item id="8"><n>Mutton Rogan Josh</n><price>459</price><description>Kashmiri-style slow-braised mutton in a fiery sauce of Kashmiri chillies and whole spices. Deeply aromatic.</description><image>https://images.unsplash.com/photo-1574653853027-5382a3d23a15?w=400&amp;h=300&amp;fit=crop</image><badge>Non-Veg</badge></item>
+    <item id="9"><n>Chole Bhature</n><price>239</price><description>Spiced chickpea curry served with fluffy deep-fried bhature. A beloved North Indian classic for any time of day.</description><image>https://images.unsplash.com/photo-1626100551987-c54e956f4665?w=400&amp;h=300&amp;fit=crop</image><badge>Veg</badge></item>
+    <item id="10"><n>Fish Curry</n><price>419</price><description>Fresh fish fillets cooked in a tangy Goan-style coconut curry with kokum. A coastal delicacy full of bold flavours.</description><image>https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400&amp;h=300&amp;fit=crop</image><badge>Non-Veg</badge></item>
+  </category>
+  <category name="Rice &amp; Biryani">
+    <item id="11"><n>Chicken Biryani</n><price>369</price><description>Fragrant basmati rice layered with spiced chicken, caramelised onions, and saffron. Cooked dum-style for maximum flavour.</description><image>https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400&amp;h=300&amp;fit=crop</image><badge>Non-Veg</badge></item>
+    <item id="12"><n>Veg Biryani</n><price>299</price><description>Aromatic basmati rice cooked with seasonal vegetables and whole spices. Light yet deeply satisfying.</description><image>https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=400&amp;h=300&amp;fit=crop</image><badge>Veg</badge></item>
+    <item id="13"><n>Hyderabadi Mutton Biryani</n><price>499</price><description>The royal Hyderabadi dum biryani with tender mutton, aromatic spices, and saffron-infused rice. A true feast.</description><image>https://images.unsplash.com/photo-1599043513900-ed6fe01d3833?w=400&amp;h=300&amp;fit=crop</image><badge>Non-Veg</badge></item>
+  </category>
+  <category name="Breads">
+    <item id="14"><n>Butter Naan</n><price>49</price><description>Soft leavened bread baked in a tandoor and finished with a generous brushing of melted butter. Perfectly fluffy.</description><image>https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400&amp;h=300&amp;fit=crop</image><badge>Veg</badge></item>
+    <item id="15"><n>Garlic Naan</n><price>59</price><description>Tandoor-baked bread topped with fresh garlic and coriander, brushed with butter. Fragrant and irresistible.</description><image>https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&amp;h=300&amp;fit=crop</image><badge>Veg</badge></item>
+    <item id="16"><n>Laccha Paratha</n><price>69</price><description>Flaky, layered whole-wheat bread cooked on a tawa with ghee. Crispy on the outside, tender inside.</description><image>https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=400&amp;h=300&amp;fit=crop</image><badge>Veg</badge></item>
+  </category>
+  <category name="Desserts">
+    <item id="17"><n>Gulab Jamun</n><price>149</price><description>Soft milk-solid dumplings soaked in cardamom-rose sugar syrup. Served warm. The ultimate Indian sweet indulgence.</description><image>https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&amp;h=300&amp;fit=crop</image><badge>Veg</badge></item>
+    <item id="18"><n>Rasmalai</n><price>179</price><description>Delicate chenna discs soaked in chilled saffron-cardamom milk, garnished with pistachios. Light and heavenly.</description><image>https://images.unsplash.com/photo-1666538341780-d0f79a8c6b8e?w=400&amp;h=300&amp;fit=crop</image><badge>Veg</badge></item>
+    <item id="19"><n>Mango Kulfi</n><price>129</price><description>Traditional Indian ice cream made with condensed milk and Alphonso mangoes. Dense, rich, and refreshing.</description><image>https://images.unsplash.com/photo-1488900128323-21503983a07e?w=400&amp;h=300&amp;fit=crop</image><badge>Veg</badge></item>
+  </category>
+  <category name="Beverages">
+    <item id="20"><n>Mango Lassi</n><price>129</price><description>Thick and creamy yogurt-based drink blended with fresh Alphonso mango pulp. Cooling and wonderfully sweet.</description><image>https://images.unsplash.com/photo-1570197788417-0e82375c9371?w=400&amp;h=300&amp;fit=crop</image><badge>Veg</badge></item>
+    <item id="21"><n>Masala Chai</n><price>59</price><description>Freshly brewed strong tea with ginger, cardamom, and spices, finished with whole milk. India's soul in a cup.</description><image>https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=400&amp;h=300&amp;fit=crop</image><badge>Veg</badge></item>
+    <item id="22"><n>Fresh Lime Soda</n><price>79</price><description>Chilled soda with freshly squeezed lime juice, a pinch of black salt and cumin. Sweet or salted — you choose.</description><image>https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&amp;h=300&amp;fit=crop</image><badge>Veg</badge></item>
+  </category>
+</menu>`;
+
+// ---- PARSE XML ----
+function parseMenuXML(xmlStr) {
+  const parser = new DOMParser();
+  const xmlDoc = parser.parseFromString(xmlStr, 'application/xml');
+  const categories = [];
+  xmlDoc.querySelectorAll('category').forEach(cat => {
+    const catName = cat.getAttribute('name');
+    const items = [];
+    cat.querySelectorAll('item').forEach(item => {
+      items.push({
+        id:    item.getAttribute('id'),
+        name:  item.querySelector('n').textContent,
+        price: parseInt(item.querySelector('price').textContent, 10),
+        desc:  item.querySelector('description').textContent,
+        image: item.querySelector('image').textContent,
+        badge: item.querySelector('badge').textContent,
+      });
+    });
+    categories.push({ name: catName, items });
+  });
+  return categories;
+}
+
+// ---- MAKE CARD HTML ----
+function makeCard(item) {
+  const badgeClass = item.badge === 'Veg' ? 'badge-veg' : 'badge-nonveg';
+  const dot = item.badge === 'Veg' ? '🟢' : '🔴';
+  return `
+    <div class="food-card">
+      <div class="food-card-img-wrap">
+        <img class="food-card-img" src="${item.image}" alt="${item.name}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop'" />
+      </div>
+      <div class="food-card-body">
+        <div class="food-card-top">
+          <div class="food-card-name">${item.name}</div>
+          <div class="food-card-price"><span>₹</span>${item.price}</div>
+        </div>
+        <span class="${badgeClass}">${dot} ${item.badge}</span>
+        <p class="food-card-desc">${item.desc}</p>
+        <div class="food-card-footer">
+          <button class="add-btn" onclick="addToCart('${item.name}', ${item.price})">+ Add to Cart</button>
+        </div>
+      </div>
+    </div>`;
+}
+
+// ---- RENDER HOME MENU (featured items — 8 picks) ----
+function renderHomeMenu(categories) {
+  const featured = [];
+  const picks = [0, 1, 4, 5, 6, 10, 16, 19]; // select interesting items
+  let flat = [];
+  categories.forEach(c => c.items.forEach(i => flat.push(i)));
+  picks.forEach(i => { if (flat[i]) featured.push(flat[i]); });
+  document.getElementById('homeMenuGrid').innerHTML = featured.map(makeCard).join('');
+}
+
+// ---- RENDER FULL MENU ----
+function renderFullMenu(categories, filterCat = 'all') {
+  const wrap = document.getElementById('fullMenuWrap');
+  let html = '';
+  categories.forEach(cat => {
+    if (filterCat !== 'all' && cat.name !== filterCat) return;
+    html += `<div class="category-section" data-cat="${cat.name}">
+      <h3 class="category-label">${cat.name}</h3>
+      <div class="menu-grid">${cat.items.map(makeCard).join('')}</div>
+    </div>`;
+  });
+  wrap.innerHTML = html || '<p style="text-align:center;color:var(--warm-gray);padding:40px;">No items found.</p>';
+}
+
+// ---- BUILD FILTER BUTTONS ----
+function buildFilters(categories) {
+  const container = document.getElementById('menuFilters');
+  categories.forEach(cat => {
+    const btn = document.createElement('button');
+    btn.className = 'filter-btn';
+    btn.dataset.filter = cat.name;
+    btn.textContent = cat.name;
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderFullMenu(MENU_DATA, cat.name);
+    });
+    container.appendChild(btn);
+  });
+  // "All" resets
+  container.querySelector('[data-filter="all"]').addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    container.querySelector('[data-filter="all"]').classList.add('active');
+    renderFullMenu(MENU_DATA, 'all');
+  });
+}
+
+// ---- INIT ----
+const MENU_DATA = parseMenuXML(XML_DATA);
+renderHomeMenu(MENU_DATA);
+renderFullMenu(MENU_DATA);
+buildFilters(MENU_DATA);
+
+// ---- NAVIGATION ----
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  const map = { home: 0, menu: 1, about: 2, contact: 3 };
+  const links = document.querySelectorAll('.nav-links a');
+  if (links[map[id]]) links[map[id]].classList.add('active');
+  // Close mobile menu
+  document.getElementById('navLinks').classList.remove('open');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ---- HAMBURGER ----
+document.getElementById('hamburger').addEventListener('click', () => {
+  document.getElementById('navLinks').classList.toggle('open');
+});
+
+// ---- CART TOAST ----
+function addToCart(name, price) {
+  document.getElementById('toastMsg').textContent = `"${name}" added — ₹${price}`;
+  const toast = document.getElementById('cartToast');
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 2800);
+}
+
+// ---- CONTACT FORM SUBMIT ----
+function submitForm() {
+  const name    = document.getElementById('fullName').value.trim();
+  const email   = document.getElementById('email').value.trim();
+  const subject = document.getElementById('subject').value;
+  const message = document.getElementById('message').value.trim();
+  if (!name || !email || !subject || !message) {
+    alert('Please fill in all required fields (marked with *).');
+    return;
+  }
+  if (!/\S+@\S+\.\S+/.test(email)) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+  document.getElementById('contactFormWrap').style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+  // Reset form after delay
+  setTimeout(() => {
+    document.getElementById('contactFormWrap').style.display = 'block';
+    document.getElementById('formSuccess').style.display = 'none';
+    document.getElementById('fullName').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('phone').value = '';
+    document.getElementById('subject').value = '';
+    document.getElementById('message').value = '';
+  }, 5000);
+}
+
+// ---- NEWSLETTER ----
+function subscribeNewsletter() {
+  const el = document.getElementById('newsletterEmail');
+  if (!el.value || !/\S+@\S+\.\S+/.test(el.value)) {
+    el.style.borderColor = '#E8620A';
+    return;
+  }
+  el.style.borderColor = '#2E7D32';
+  el.value = '';
+  el.placeholder = 'Subscribed! 🎉';
+  setTimeout(() => {
+    el.placeholder = 'your@email.com';
+    el.style.borderColor = '';
+  }, 3000);
+}
+</script>
+
+</body>
+</html>

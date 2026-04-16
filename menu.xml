@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+  <category name="Starters">
+    <item id="1">
+      <name>Paneer Tikka</name>
+      <price>249</price>
+      <description>Tender cottage cheese cubes marinated in spiced yogurt, grilled to perfection in a tandoor. Served with mint chutney.</description>
+      <image>https://images.unsplash.com/photo-1567188040759-fb8a883dc6d6?w=400&amp;h=300&amp;fit=crop</image>
+      <badge>Veg</badge>
+    </item>
+    <item id="2">
+      <name>Chicken Seekh Kebab</name>
+      <price>299</price>
+      <description>Minced chicken blended with aromatic herbs and spices, skewered and grilled over charcoal. Juicy and flavour-packed.</description>
+      <image>https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=400&amp;h=300&amp;fit=crop</image>
+      <badge>Non-Veg</badge>
+    </item>
+    <item id="3">
+      <name>Veg Spring Rolls</name>
+      <price>189</price>
+      <description>Crispy golden rolls stuffed with fresh vegetables and glass noodles, served with sweet chilli dipping sauce.</description>
+      <image>https://images.unsplash.com/photo-1563245372-f21724e3856d?w=400&amp;h=300&amp;fit=crop</image>
+      <badge>Veg</badge>
+    </item>
+    <item id="4">
+      <name>Hara Bhara Kebab</name>
+      <price>219</price>
+      <description>Soft patties made from spinach, peas, and paneer, shallow-fried until golden. A healthy and delicious starter.</description>
+      <image>https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=400&amp;h=300&amp;fit=crop</image>
+      <badge>Veg</badge>
+    </item>
+  </category>
+
+  <category name="Main Course">
+    <item id="5">
+      <name>Butter Chicken</name>
+      <price>389</price>
+      <description>Succulent chicken pieces simmered in a rich, creamy tomato-butter gravy with aromatic spices. Best paired with naan.</description>
+      <image>https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=400&amp;h=300&amp;fit=crop</image>
+      <badge>Non-Veg</badge>
+    </item>
+    <item id="6">
+      <name>Paneer Butter Masala</name>
+      <price>349</price>
+      <description>Soft paneer cubes in a velvety tomato-cashew gravy, infused with aromatic spices and finished with fresh cream.</description>
+      <image>https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=400&amp;h=300&amp;fit=crop</image>
+      <badge>Veg</badge>
+    </item>
+    <item id="7">
+      <name>Dal Makhani</name>
+      <price>299</price>
+      <description>Black lentils slow-cooked overnight with butter and cream, the classic Punjabi comfort dish. Rich and indulgent.</description>
+      <image>https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=400&amp;h=300&amp;fit=crop</image>
+      <badge>Veg</badge>
+    </item>
+    <item id="8">
+      <name>Mutton Rogan Josh</name>
+      <price>459</price>
+      <description>Kashmiri-style slow-braised mutton in a fiery sauce of Kashmiri chillies and whole spices. Deeply aromatic.</description>
+      <image>https://images.unsplash.com/photo-1574653853027-5382a3d23a15?w=400&amp;h=300&amp;fit=crop</image>
+      <badge>Non-Veg</badge>
+    </item>
+    <item id="9">
+      <name>Chole Bhature</name>
+      <price>239</price>
+      <description>Spiced chickpea curry served with fluffy deep-fried bhature. A beloved North Indian classic for any time of day.</description>
+      <image>https://images.unsplash.com/photo-1626100551987-c54e956f4665?w=400&amp;h=300&amp;fit=crop</image>
+      <badge>Veg</badge>
+    </item>
+    <item id="10">
+      <name>Fish Curry</name>
+      <price>419</price>
+      <description>Fresh fish fillets cooked in a tangy Goan-style coconut curry with kokum. A coastal delicacy full of bold flavours.</description>
+      <image>https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400&amp;h=300&amp;fit=crop</image>
+      <badge>Non-Veg</badge>
+    </item>
+  </category>
+
+  <category name="Rice &amp; Biryani">
+    <item id="11">
+      <name>Chicken Biryani</name>
+      <price>369</price>
+      <description>Fragrant basmati rice layered with spiced chicken, caramelised onions, and saffron. Cooked dum-style for maximum flavour.</description>
+      <image>https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400&amp;h=300&amp;fit=crop</image>
+      <badge>Non-Veg</badge>
+    </item>
+    <item id="12">
+      <name>Veg Biryani</name>
+      <price>299</price>
+      <description>Aromatic basmati rice cooked with seasonal vegetables and whole spices. Light yet deeply satisfying.</description>
+      <image>https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=400&amp;h=300&amp;fit=crop</image>
+      <badge>Veg</badge>
+    </item>
+    <item id="13">
+      <name>Hyderabadi Mutton Biryani</name>
+      <price>499</price>
+      <description>The royal Hyderabadi dum biryani with tender mutton, aromatic spices, and saffron-infused rice. A true feast.</description>
+      <image>https://images.unsplash.com/photo-1599043513900-ed6fe01d3833?w=400&amp;h=300&amp;fit=crop</image>
+      <badge>Non-Veg</badge>
+    </item>
+  </category>
+
+  <category name="Breads">
+    <item id="14">
+      <name>Butter Naan</name>
+      <price>49</price>
+      <description>Soft leavened bread baked in a tandoor and finished with a generous brushing of melted butter. Perfectly fluffy.</description>
+      <image>https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400&amp;h=300&amp;fit=crop</image>
+      <badge>Veg</badge>
+    </item>
+    <item id="15">
+      <name>Garlic Naan</name>
+      <price>59</price>
+      <description>Tandoor-baked bread topped with fresh garlic and coriander, brushed with butter. Fragrant and irresistible.</description>
+      <image>https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&amp;h=300&amp;fit=crop</image>
+      <badge>Veg</badge>
+    </item>
+    <item id="16">
+      <name>Laccha Paratha</name>
+      <price>69</price>
+      <description>Flaky, layered whole-wheat bread cooked on a tawa with ghee. Crispy on the outside, tender inside.</description>
+      <image>https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=400&amp;h=300&amp;fit=crop</image>
+      <badge>Veg</badge>
+    </item>
+  </category>
+
+  <category name="Desserts">
+    <item id="17">
+      <name>Gulab Jamun</name>
+      <price>149</price>
+      <description>Soft milk-solid dumplings soaked in cardamom-rose sugar syrup. Served warm. The ultimate Indian sweet indulgence.</description>
+      <image>https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&amp;h=300&amp;fit=crop</image>
+      <badge>Veg</badge>
+    </item>
+    <item id="18">
+      <name>Rasmalai</name>
+      <price>179</price>
+      <description>Delicate chenna discs soaked in chilled saffron-cardamom milk, garnished with pistachios. Light and heavenly.</description>
+      <image>https://images.unsplash.com/photo-1666538341780-d0f79a8c6b8e?w=400&amp;h=300&amp;fit=crop</image>
+      <badge>Veg</badge>
+    </item>
+    <item id="19">
+      <name>Mango Kulfi</name>
+      <price>129</price>
+      <description>Traditional Indian ice cream made with condensed milk and Alphonso mangoes. Dense, rich, and refreshing.</description>
+      <image>https://images.unsplash.com/photo-1488900128323-21503983a07e?w=400&amp;h=300&amp;fit=crop</image>
+      <badge>Veg</badge>
+    </item>
+  </category>
+
+  <category name="Beverages">
+    <item id="20">
+      <name>Mango Lassi</name>
+      <price>129</price>
+      <description>Thick and creamy yogurt-based drink blended with fresh Alphonso mango pulp. Cooling and wonderfully sweet.</description>
+      <image>https://images.unsplash.com/photo-1570197788417-0e82375c9371?w=400&amp;h=300&amp;fit=crop</image>
+      <badge>Veg</badge>
+    </item>
+    <item id="21">
+      <name>Masala Chai</name>
+      <price>59</price>
+      <description>Freshly brewed strong tea with ginger, cardamom, and spices, finished with whole milk. India's soul in a cup.</description>
+      <image>https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=400&amp;h=300&amp;fit=crop</image>
+      <badge>Veg</badge>
+    </item>
+    <item id="22">
+      <name>Fresh Lime Soda</name>
+      <price>79</price>
+      <description>Chilled soda with freshly squeezed lime juice, a pinch of black salt and cumin. Sweet or salted — you choose.</description>
+      <image>https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&amp;h=300&amp;fit=crop</image>
+      <badge>Veg</badge>
+    </item>
+  </category>
+</menu>
