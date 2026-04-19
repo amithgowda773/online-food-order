@@ -12,6 +12,13 @@
 <!-- ===================== HEADER ===================== -->
 <header>
   <nav>
+   <a href="#" class="nav-order-btn">🛒 Order Now</a>
+
+<div class="cart-box" onclick="toggleCart()">
+  🛒 Cart (<span id="cartCount">0</span>)
+</div>
+
+<button class="hamburger" id="hamburger">
     <a class="logo" href="#" onclick="showPage('home'); return false;">
       <div class="logo-icon">🍛</div>
       Zafrani
@@ -583,11 +590,64 @@ document.getElementById('hamburger').addEventListener('click', () => {
 });
 
 // ---- CART TOAST ----
+// ================= CART SYSTEM =================
+let cart = [];
+
+// Add to Cart
 function addToCart(name, price) {
+  const existing = cart.find(item => item.name === name);
+
+  if (existing) {
+    existing.qty += 1;
+  } else {
+    cart.push({ name, price, qty: 1 });
+  }
+
+  updateCartUI();
+
+  // Toast message
   document.getElementById('toastMsg').textContent = `"${name}" added — ₹${price}`;
   const toast = document.getElementById('cartToast');
   toast.classList.add('show');
-  setTimeout(() => toast.classList.remove('show'), 2800);
+  setTimeout(() => toast.classList.remove('show'), 2000);
+}
+
+// Update Cart UI
+function updateCartUI() {
+  const itemsDiv = document.getElementById('cartItems');
+  const count = document.getElementById('cartCount');
+  const total = document.getElementById('cartTotal');
+
+  itemsDiv.innerHTML = '';
+  let sum = 0;
+  let totalItems = 0;
+
+  cart.forEach((item, index) => {
+    sum += item.price * item.qty;
+    totalItems += item.qty;
+
+    itemsDiv.innerHTML += `
+      <p>
+        ${item.name} x ${item.qty} = ₹${item.price * item.qty}
+        <button onclick="removeItem(${index})">❌</button>
+      </p>
+    `;
+  });
+
+  count.textContent = totalItems;
+  total.textContent = sum;
+}
+
+// Remove Item
+function removeItem(index) {
+  cart.splice(index, 1);
+  updateCartUI();
+}
+
+// Toggle Cart Panel
+function toggleCart() {
+  const panel = document.getElementById('cartPanel');
+  panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
 }
 
 // ---- CONTACT FORM SUBMIT ----
@@ -634,6 +694,11 @@ function subscribeNewsletter() {
   }, 3000);
 }
 </script>
+<div id="cartPanel" class="cart-panel">
+  <h2>Your Cart</h2>
+  <div id="cartItems"></div>
+  <h3>Total: ₹<span id="cartTotal">0</span></h3>
+</div>
 
 </body>
 </html>
